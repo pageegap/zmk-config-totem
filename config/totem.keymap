@@ -49,14 +49,14 @@
             key-positions = <23 24>;
         };
 
-        lshift {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <21 22>;
-        };
-
         suspend {
             bindings = <&kp LC(LG(Q))>;
             key-positions = <0 9>;
+        };
+
+        prtscreen {
+            bindings = <&kp LG(LS(N5))>;
+            key-positions = <14 15>;
         };
     };
 
