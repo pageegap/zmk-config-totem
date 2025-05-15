@@ -78,6 +78,12 @@
 
             tapping-term-ms = <400>;
         };
+
+        mousekey: mousekey {
+            compatible = "zmk,behavior-mouse-key-press";
+            label = "MOUSEKEY";
+            #binding-cells = <1>;
+        };
     };
 
     keymap {
@@ -128,10 +134,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &trans  &trans        &trans           &trans       &trans      &kp CAPS  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
-        &trans  &trans        &kp LC(LS(TAB))  &kp LC(TAB)  &trans      &trans    &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
-&trans  &trans  &kp LEFT_GUI  &mkp MB4         &mkp MB1     &mkp MB5    &trans    &kp N7        &kp N8        &kp N9        &kp N0  &trans
-                              &mkp MB2         &kp TAB      &trans      &trans    &trans        &trans
+        &trans  &trans        &trans           &trans         &trans           &kp CAPS  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
+        &trans  &trans        &kp LC(LS(TAB))  &kp LC(TAB)    &trans           &trans    &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
+&trans  &trans  &kp LEFT_GUI  &mousekey MB4    &mousekey MB1  &mousekey MB5    &trans    &kp N7        &kp N8        &kp N9        &kp N0  &trans
+                              &mkp MB2         &kp TAB        &trans           &trans    &trans        &trans
             >;
         };
 
