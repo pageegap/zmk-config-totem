@@ -118,10 +118,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                          &kp Q       &kp W       &kp E        &kp R             &kp T      &kp Y       &kp U                  &kp I        &kp O       &kp P
-                          &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LEFT_SHIFT F  &kp G      &kp H       &mt RIGHT_SHIFT J      &mt RCTRL K  &mt RALT L  &mt RGUI SEMICOLON
-&mt LEFT_SHIFT BACKSPACE  &lt 1 Z     &kp X       &kp C        &kp V             &kp B      &kp N       &kp M                  &kp COMMA    &kp DOT     &lt 2 SLASH         &mt RIGHT_SHIFT SQT
-                                                  &kp CAPS     &lt 3 BACKSPACE   &launch    &kp DELETE  &mt RIGHT_SHIFT SPACE  &lt 4 ENTER
+                          &kp Q       &kp W       &kp E        &kp R             &kp T        &kp Y       &kp U                  &kp I        &kp O       &kp P
+                          &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LEFT_SHIFT F  &kp G        &kp H       &mt RIGHT_SHIFT J      &mt RCTRL K  &mt RALT L  &mt RGUI SEMICOLON
+&mt LEFT_SHIFT BACKSPACE  &lt 1 Z     &kp X       &kp C        &kp V             &kp B        &kp N       &kp M                  &kp COMMA    &kp DOT     &lt 2 SLASH         &mt RIGHT_SHIFT SQT
+                                                  &kp CAPS     &kp BACKSPACE     &lt 3 ESC    &kp DELETE  &mt RIGHT_SHIFT SPACE  &lt 4 ENTER
             >;
         };
 
@@ -147,7 +147,7 @@
         &trans  &trans        &trans           &trans       &trans      &kp CAPS  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
         &trans  &trans        &kp LC(LS(TAB))  &kp LC(TAB)  &trans      &trans    &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
 &trans  &trans  &kp LEFT_GUI  &mkp MB4         &mkp MB1     &mkp MB5    &trans    &kp N7        &kp N8        &kp N9        &kp N0  &trans
-                              &mkp MB2         &kp TAB      &trans      &trans    &trans        &trans
+                              &mkp MB2         &kp TAB      &launch     &trans    &trans        &trans
             >;
         };
 
@@ -170,10 +170,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &trans            &kp PERCENT  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HASH          &kp PIPE         &kp AMPERSAND  &kp ASTERISK  &kp GRAVE      &trans
-        &kp SINGLE_QUOTE  &kp AT_SIGN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE         &kp EXCLAMATION  &kp EQUAL      &kp PLUS      &kp MINUS      &trans
-&trans  &kp BACKSLASH     &kp CARET    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp DOLLAR        &trans           &mkp MB1       &mkp MB2      &kp RIGHT_GUI  &trans  &trans
-                                       &trans                &trans                 &kp LEFT_SHIFT    &trans           &kp TAB        &kp RSHIFT
+        &kp SINGLE_QUOTE   &kp PERCENT  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HASH          &kp PIPE         &kp AMPERSAND  &kp ASTERISK  &kp GRAVE      &trans
+        &kp DOUBLE_QUOTES  &kp AT_SIGN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE         &kp EXCLAMATION  &kp EQUAL      &kp PLUS      &kp MINUS      &trans
+&trans  &kp BACKSLASH      &kp CARET    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp DOLLAR        &trans           &mkp MB1       &mkp MB2      &kp RIGHT_GUI  &trans  &trans
+                                        &trans                &trans                 &kp LEFT_SHIFT    &trans           &kp TAB        &kp RSHIFT
             >;
         };
 
@@ -196,10 +196,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-               &trans   &trans  &trans  &trans   &trans    &trans  &kp K_MUTE      &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &trans
-               &kp F12  &kp F7  &kp F8  &kp F10  &trans    &trans  &kp LEFT_ARROW  &kp UP_ARROW     &kp DOWN           &kp RIGHT
-&kp BACKSPACE  &trans   &trans  &trans  &trans   &trans    &trans  &new_line       &kp HOME         &kp END            &trans     &trans
-                                &trans  &trans   &trans    &trans  &trans          &trans
+                &trans   &trans  &trans  &trans   &trans    &trans  &kp K_MUTE       &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &trans
+                &kp F12  &kp F7  &kp F8  &kp F10  &trans    &trans  &kp LEFT_ARROW   &kp UP_ARROW     &kp DOWN           &kp RIGHT
+&kp LEFT_SHIFT  &trans   &trans  &trans  &trans   &trans    &trans  &new_line        &kp HOME         &kp END            &trans     &trans
+                                 &trans  &trans   &trans    &trans  &kp RIGHT_SHIFT  &trans
             >;
         };
 
