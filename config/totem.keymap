@@ -77,13 +77,6 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SHOWSCREEN";
             #binding-cells = <0>;
-            bindings = <&kp LC(UP_ARROW)>, <&kp UP_ARROW>;
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
             bindings = <&kp LC(UP_ARROW)>, <&kp LG(UP_ARROW)>;
         };
     };
@@ -165,7 +158,7 @@
         &kp SQT               &kp PERCENT  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HASH      &kp PIPE         &kp AMPERSAND  &kp ASTERISK  &kp GRAVE      &trans
         &kp DQT               &kp AT_SIGN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE     &kp EXCLAMATION  &kp EQUAL      &kp PLUS      &kp MINUS      &trans
 &trans  &kp NON_US_BACKSLASH  &kp LCTRL    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp DOLLAR    &trans           &mkp MB1       &mkp MB2      &kp RIGHT_GUI  &trans  &trans
-                                           &trans                &gif                   &trans        &kp TAB          &trans         &trans
+                                           &trans                &trans                 &trans        &kp TAB          &trans         &trans
             >;
         };
 
