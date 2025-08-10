@@ -1,7 +1,9 @@
 include:
   - board: seeeduino_xiao_ble
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     shield: totem_left
   - board: seeeduino_xiao_ble
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     shield: totem_right
   - board: seeeduino_xiao_ble
     shield: totem_dongle prospector_adapter
