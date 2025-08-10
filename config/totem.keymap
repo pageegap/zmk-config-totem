@@ -64,21 +64,6 @@
     };
 
     macros {
-        gif: gif {
-            label = "giphy";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N2>,
-                <&macro_release>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp G &kp I &kp F>;
-        };
-
         new_line: new_line {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -93,6 +78,13 @@
             label = "SHOWSCREEN";
             #binding-cells = <0>;
             bindings = <&kp LC(UP_ARROW)>, <&kp UP_ARROW>;
+        };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NEW_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&kp LC(UP_ARROW)>, <&kp LG(UP_ARROW)>;
         };
     };
 
@@ -118,10 +110,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-          &kp Q       &kp W       &kp E        &kp R        &kp T            &kp Y       &kp U        &kp I        &kp O       &kp P
-          &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G            &kp H       &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt RGUI SEMICOLON
-&kp BSPC  &lt 1 Z     &kp X       &kp C        &kp V        &kp B            &kp N       &kp M        &kp COMMA    &kp PERIOD  &lt 2 SLASH         &kp SINGLE_QUOTE
-                                  &showscreen  &lt 3 TAB    &kp BACKSPACE    &kp DELETE  &kp SPACE    &lt 4 A
+                &kp Q       &kp W       &kp E        &kp R        &kp T            &kp Y       &kp U        &kp I        &kp O       &kp P
+                &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G            &kp H       &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt RGUI SEMICOLON
+&kp LEFT_SHIFT  &lt 1 Z     &kp X       &kp C        &kp V        &kp B            &kp N       &kp M        &kp COMMA    &kp PERIOD  &lt 2 SLASH         &kp SINGLE_QUOTE
+                                        &showscreen  &lt 3 TAB    &kp BACKSPACE    &kp DELETE  &kp SPACE    &lt 4 A
             >;
         };
 
@@ -130,7 +122,7 @@
         numbers {
             // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 
-            label = "NUMS";
+            label = "NUMBERS";
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
@@ -156,7 +148,7 @@
         symbols {
             // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 
-            label = "SYM";
+            label = "SYMBOLS";
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
@@ -182,7 +174,7 @@
         navigation {
             // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 
-            label = "NAV";
+            label = "moving";
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
@@ -198,7 +190,7 @@
             bindings = <
         &trans   &trans  &trans  &trans   &trans    &trans  &kp K_MUTE  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &trans
         &kp F12  &kp F7  &kp F8  &kp F10  &trans    &trans  &kp LEFT    &kp UP_ARROW     &kp DOWN_ARROW     &kp RIGHT
-&trans  &trans   &trans  &trans  &trans   &trans    &trans  &none       &kp HOME         &kp END            &trans     &trans
+&trans  &trans   &trans  &trans  &trans   &trans    &trans  &new_line   &kp HOME         &kp END            &trans     &trans
                          &trans  &trans   &trans    &trans  &trans      &trans
             >;
         };
