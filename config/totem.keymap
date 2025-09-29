@@ -15,6 +15,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
+
+// testing
 
 #define BASE 0
 #define NAV  1
@@ -24,38 +27,59 @@
 #define TVP2 5
 
 &mt {
-  quick-tap-ms = <100>;
-  global-quick-tap;
-  flavor = "tap-preferred";
-  tapping-term-ms = <170>;
+    quick-tap-ms = <100>;
+    global-quick-tap;
+    flavor = "tap-preferred";
+    tapping-term-ms = <170>;
 };
 
 / {
-     combos {
-            compatible = "zmk,combos";
-            combo_esc {
-                timeout-ms = <50>;
-                key-positions = <0 1>;
-                bindings = <&kp ESC>;
-            };
-            combo_tvp {
-                timeout-ms = <100>;
-                key-positions = <11 12 13>;
-                bindings = <&tog TVP1>;
-            };
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp ESC>;
+        };
+
+        combo_tvp {
+            timeout-ms = <100>;
+            key-positions = <27 28>;
+            bindings = <&kp ENTER>;
+        };
+
+        left_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <23 24>;
+        };
+
+        lockscreen {
+            bindings = <&kp LG(LC(Q))>;
+            key-positions = <4 5>;
+        };
+
+        printscreen {
+            bindings = <&kp LG(RS(N5))>;
+            key-positions = <14 15>;
+        };
     };
 
     macros {
-        gif: gif {
-            label = "giphy";
+        new_line: new_line {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp N2>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp G &kp I &kp F>
-                ;
+            bindings = <&kp LC(E) &kp ENTER>;
+            label = "NEW_LINE";
+        };
+    };
+
+    behaviors {
+        showscreen: showscreen {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHOWSCREEN";
+            #binding-cells = <0>;
+            bindings = <&kp LC(UP_ARROW)>, <&kp LG(UP_ARROW)>;
         };
     };
 
@@ -76,14 +100,12 @@ label= "BASE"                              ;
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃    DEL    ┃    TAB    ┃    SPC    ┃   ┃   ENTER   ┃           ┃   BSPC    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
- bindings = <
-// ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-
-                &kp W       &kp W       &kp F       &kp P       &kp G           &kp J       &kp L       &kp U       &kp Y       &kp SEMI
-                &mt LGUI A  &mt LALT R  &mt LCTRL S &mt LSHFT T &kp D           &kp H       &mt RSHFT N &mt RCTRL E &mt RALT I  &mt RGUI O
-    &kp Q       &kp Z       &kp X       &kp C       &kp V       &kp B           &kp K       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp BSLH
-                                        &kp DEL   &lt NAV TAB   &kp SPACE       &kp RET   &lt SYM ESC   &kp BSPC
-                        >;
+bindings = <
+                &kp Q       &kp W       &kp E        &kp R        &kp T            &kp Y       &kp U        &kp I        &kp O       &kp P
+                &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G            &kp H       &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt RGUI SEMICOLON
+&kp LEFT_SHIFT  &lt 1 Z     &kp X       &kp C        &kp V        &kp B            &kp N       &kp M        &kp COMMA    &kp PERIOD  &lt 2 SLASH         &kp SINGLE_QUOTE
+                                        &showscreen  &lt 3 TAB    &kp BACKSPACE    &kp DELETE  &kp SPACE    &lt 4 A
+            >;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
