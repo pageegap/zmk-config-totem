@@ -3,11 +3,11 @@ include:
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     shield: totem_left
   - board: seeeduino_xiao_ble
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
     shield: totem_right
-  - board: seeeduino_xiao_ble
+  #- board: seeeduino_xiao_ble
     # shield: totem_dongle prospector_adapter
-    shield: totem_dongle dongle_screen
+    #shield: totem_dongle dongle_screen
   - board: seeeduino_xiao_ble
     shield: settings_reset
 # there is no settingsreset (needed) for the XIAO
